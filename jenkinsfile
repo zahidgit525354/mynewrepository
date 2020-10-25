@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    stages  ('Git clone') {
+        echo 'Git clone successfully......'
+    }
+    stages  ('Maven Clean Package') {
+        echo 'Build successfully......'
+    }
+    stages  ('Build Docker Image') {
+        echo 'Build Docker image successfully......'
+    }
+    stages  ('Push Docker Image') {
+        echo 'Push Docker Image successfully......'
+    }
+    stages  ('Deploy Docker service in swarm clsuter') {
+        echo 'deploy Docker service successfully......'
+    }
+}
