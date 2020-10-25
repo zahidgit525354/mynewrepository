@@ -1,18 +1,35 @@
 pipeline {
     agent any
-    stages  ('Git clone') {
-        bat 'echo "Git clone successfully......"'
-    }
-    stages  ('Maven Clean Package') {
-        bat 'echo "Build successfully......"'
-    }
-    stages  ('Build Docker Image') {
-        bat 'echo "Build Docker image successfully......"'
-    }
-    stages  ('Push Docker Image') {
-        bat 'echo "Push Docker Image successfully......"'
-    }
-    stages  ('Deploy Docker service in swarm clsuter') {
-        bat 'echo "deploy Docker service successfully......"'
+    stages {
+
+        stage('Git clone') {
+            steps {
+               bat 'echo "Git clone successfully......"'
+            }
+        }
+
+        stage('Maven Clean Package') {
+            steps {
+                bat 'echo "Build successfully......"'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+               bat 'echo "Build Docker image successfully......"'
+            }
+        }
+
+        stage('Push Docker Image') {
+            steps {
+                bat 'echo "Push Docker Image successfully......"'
+            }
+        }
+
+        stage('Deploy Docker service in swarm clsuter') {
+            steps {
+                bat 'echo "deploy Docker service successfully......"'
+            }
+        }
     }
 }
